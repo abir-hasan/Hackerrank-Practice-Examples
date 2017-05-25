@@ -7,7 +7,7 @@ public class BinarySearchTreeInsertion {
 
     public static void main(String[] args) {
         TreeNode node = Insert(createDummyTree(), 0);
-        inOrder(node); // Print
+        TreePractice.inOrder(node); // Print
     }
 
     static TreeNode createDummyTree() {
@@ -54,12 +54,5 @@ public class BinarySearchTreeInsertion {
             }
         }
         return originalRoot;
-    }
-
-    static void inOrder(TreeNode root) {
-        if (root == null) return;
-        inOrder(root.left);
-        System.out.print(root.data + " ");
-        inOrder(root.right);
     }
 }
