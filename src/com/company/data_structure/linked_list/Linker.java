@@ -4,66 +4,89 @@ package com.company.data_structure.linked_list;
  * Created by Abir on 08-May-17.
  */
 public class Linker {
-    static class Node {
-        int data;
-        Node next;
-    }
 
     public static void main(String[] args) {
         Node node = new Node();
-        node.data = 1;
+        node.data = 4;
         node.next = null;
 
         Node node1 = new Node();
-        node1.data = 2;
+        node1.data = 3;
         node1.next = node;
 
         Node node2 = new Node();
-        node2.data = 3;
+        node2.data = 2;
         node2.next = node1;
 
         Node node3 = new Node();
-        node3.data = 4;
+        node3.data = 1;
         node3.next = node2;
 
-        //printData(node3);
-        //Insert(node3, 5);
-        InsertNth(node3, 5, 1);
-    }
-
-    static void printData(Node head) {
-        if (head != null) {
-            System.out.print(head.data);
-            printData(head.next);
+        ReversePrint(node3);
+        //Node resultHead = InsertNth(node3, 5, 4);
+        //Node resultHead = Delete(node3, 0);
+        Node resultHead = Reverse(node3);
+        while (resultHead != null) {
+            System.out.println(resultHead.data);
+            resultHead = resultHead.next;
         }
     }
 
-    static Node Insert(Node head, int x) {
-        Node newNode = new Node();
-        newNode.data = x;
-        newNode.next = head;
-        printData(newNode);
-        return newNode;
-    }
-
-    static Node InsertNth(Node head, int data, int position) {
-        int till = 0;
+    private static Node InsertNth(Node head, int data, int position) {
+        int currentPos = 1;
         Node firstNode = head;
-        while (position != till) {
+
+        while (head != null) {
+            Node node = new Node();
+            node.data = data;
+            if (position == 0) {
+                node.next = head;
+                return node;
+            } else if (currentPos == position) {
+                node.next = head.next;
+                head.next = node;
+            }
             head = head.next;
-            till++;
+            currentPos++;
         }
+        return firstNode;
+    }
 
-        Node node = new Node();
-        node.data = data;
-        node.next = head;
-
-        if (position != 0) {
-            printData(firstNode);
-            return firstNode;
-        } else {
-            printData(node);
-            return node;
+    private static Node Delete(Node head, int position) {
+        int currentPos = 0;
+        Node firstNode = head;
+        Node prevNode = null;
+        while (head != null) {
+            if (position == 0) {
+                return head.next;
+            } else if ((currentPos + 1) == position) {
+                prevNode = head;
+            } else if (currentPos == position) {
+                prevNode.next = head.next;
+                return firstNode;
+            }
+            head = head.next;
+            currentPos++;
         }
+        return firstNode;
+    }
+
+    private static void ReversePrint(Node head) {
+        if (head == null) {
+            return;
+        }
+        ReversePrint(head.next);
+        System.out.println(head.data);
+    }
+
+    private static Node Reverse(Node head) {
+        if (head.next == null) {
+            return head;
+        }
+        Node n = Reverse(head.next);
+        Node temp = head.next;
+        temp.next = head;
+        head.next = null;
+        return n;
     }
 }
