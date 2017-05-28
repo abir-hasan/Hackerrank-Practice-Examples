@@ -8,9 +8,32 @@ public class BSTLowestCommonAncestor {
 
     public static void main(String[] args) {
         TreeNode bstRoot = BinarySearchTreeInsertion.createDummyTree();
+        System.out.println(lca(bstRoot, 5, 1).data);
     }
 
+    /**
+     * Given that tree won't be null and also values would be present in the tree
+     *
+     * @param root - Root of the tree
+     * @param v1   - value1
+     * @param v2   - value2
+     * @return lca node of the two values
+     */
     static TreeNode lca(TreeNode root, int v1, int v2) {
+        if (v1 > v2) {
+            int temp = v1;
+            v1 = v2;
+            v2 = temp;
+        }
+        while (root != null) {
+            if ((root.data > v1 && root.data < v2) || (root.data == v1 || root.data == v2)) {
+                return root;
+            } else if (root.data > v1 && root.data > v2) {
+                root = root.left;
+            } else if (root.data < v1 && root.data < v2) {
+                root = root.right;
+            }
+        }
         return root;
     }
 }
