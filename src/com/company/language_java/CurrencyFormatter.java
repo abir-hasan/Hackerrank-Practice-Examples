@@ -27,7 +27,10 @@ public class CurrencyFormatter {
         String france = nfFr.format(payment);
 
 
-        String india = us.replace("$", "Rs.");
+        //String india = us.replace("$", "Rs.");
+        Locale indiaLocale = new Locale("en","IN");
+        NumberFormat nfIn = NumberFormat.getCurrencyInstance(indiaLocale);
+        String india = nfIn.format(payment);
 
         System.out.println("US: " + us);
         System.out.println("India: " + india);
