@@ -1,4 +1,4 @@
-package com.company.language_java;
+package com.company.language_java.string_problems;
 
 import java.util.Scanner;
 
