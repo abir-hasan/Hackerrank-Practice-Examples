@@ -16,6 +16,7 @@ public class DuplicateWords {
     public static void main(String[] args) {
 
         //String regex = "\\b(\\w+)(?:\\W+\\1\\b)+";
+        //String regex = "\\b([a-z]|[A-Z]+)(\\s+\\1\\b)+";
         String regex = "\\b([a-z]|[A-Z]+)(\\s+\\1\\b)+";
         Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 
