@@ -1,4 +1,4 @@
-package com.company.language_java;
+package com.company.language_java.data_structures;
 
 import java.util.Scanner;
 
