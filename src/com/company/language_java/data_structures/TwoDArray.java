@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Practice > Java > Data Structures > Java 2D Array
  * [Hourglass problem]
  *
- * @see: https://www.hackerrank.com/challenges/java-2d-array/problem?h_r=next-challenge&h_v=zen
+ * @see: <a href="Link">https://www.hackerrank.com/challenges/java-2d-array/problem?h_r=next-challenge&h_v=zen</a>
  * <p>
  * Sample Input
  * <p>
