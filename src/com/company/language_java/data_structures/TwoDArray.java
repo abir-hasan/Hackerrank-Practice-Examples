@@ -58,7 +58,7 @@ public class TwoDArray {
                 a9 = arr[i + 2][j + 2];
 
                 //temp = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9;
-                temp = a1 + a2 + a3  + a5  + a7 + a8 + a9;
+                temp = a1 + a2 + a3 + a5 + a7 + a8 + a9;
                 System.err.println("currTemp: " + temp + " prevMax: " + max);
                 if (temp > max)
                     max = temp;
