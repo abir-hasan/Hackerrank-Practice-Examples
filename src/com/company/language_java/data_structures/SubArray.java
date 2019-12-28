@@ -39,11 +39,11 @@ public class SubArray {
         // In second step there will be two array of n-1 digits
         // In third step there will be three array of n-2 digits, so on and so forth...
         // For example say, there are 5 digits in an array
-        // In first step there will be 1 array of 5 digits
-        // In second step there will be 2 array of 4 digits
-        // In third step there will be 3 array of 3 digits
-        // In fourth step there will be 4 array of 2 digits
-        // In fifth step there will be 5 array of 1 digits
+        // In first step there will be 1 array of 5 consecutive digits
+        // In second step there will be 2 array of 4 consecutive digits
+        // In third step there will be 3 array of 3 consecutive digits
+        // In fourth step there will be 4 array of 2 consecutive digits
+        // In fifth step there will be 5 array of 1 consecutive digits
         for (int i = 1; i <= n; i++) {
             int noOfDigitsInSubArray = n - i + 1;
             for (int j = 0; j < i; j++) {
